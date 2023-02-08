@@ -1,0 +1,28 @@
+{
+  "name": "locState",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/useLocState.js",
+  "types": "./dist/useLocState.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "TypeScript",
+    "javascript",
+    "css",
+    "layout",
+    "nb",
+    "react",
+    "easy",
+    "style"
+  ],
+  "author": "sgds",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.9.5"
+  },
+  "files": [
+    "dist/"
+  ]
+}
