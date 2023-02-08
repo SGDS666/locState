@@ -1,6 +1,7 @@
 {
   "name": "locState",
   "version": "1.0.0",
+  "homepage":"https://github.com/SGDS666/locState",
   "description": "",
   "main": "./dist/useLocState.js",
   "types": "./dist/useLocState.d.ts",
