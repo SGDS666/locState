@@ -43,16 +43,24 @@ var useLocState = function (key, value) {
 exports.useLocState = useLocState;
 var useLocValue = function (key) {
     var _a = (0, react_1.useState)(null), locValue = _a[0], setLocValue = _a[1];
+    var newValue = getLocData(key);
     (0, react_1.useEffect)(function () {
-        if (locValue === null) {
-            setTimeout(function () {
-                setLocValue(getLocData(key));
-            }, 10);
+        if (locValue === null || locValue === undefined) {
+            setLocValue(newValue);
+            return;
         }
-    }, [locValue]);
+        if (Array.isArray(locValue) && Array.isArray(newValue)) {
+            //@ts-ignore
+            if (newValue.length !== locValue.length) {
+                //@ts-ignore
+                setLocValue(newValue);
+                return;
+            }
+        }
+    }, [newValue]);
     if (locValue) {
         return locValue;
     }
-    return M[key]; //缓存数据 未读取loc前方便其他组件读取
+    return M[key];
 };
 exports.useLocValue = useLocValue;

@@ -1,6 +1,6 @@
 {
-  "name": "locState",
-  "version": "1.0.0",
+  "name": "uselocstate",
+  "version": "1.0.1",
   "homepage":"https://github.com/SGDS666/locState",
   "description": "",
   "main": "./dist/useLocState.js",
@@ -11,12 +11,9 @@
   "keywords": [
     "TypeScript",
     "javascript",
-    "css",
-    "layout",
-    "nb",
     "react",
     "easy",
-    "style"
+    "localStorage"
   ],
   "author": "sgds",
   "license": "ISC",
