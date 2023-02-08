@@ -46,12 +46,19 @@ export const useLocState = <T>(key: string, value: T): [T, (newValue: T) => void
         }
     }, [])
 
-    const SetLocState = (newValue: T) => {
-
-        setState(preValue => {
-            saveLocData(key, newValue)
-            return newValue
-        })
+    const SetLocState = (newValue:any) => {
+        if(typeof newValue === "function"){
+            setState(preValue => {
+                saveLocData(key, newValue)
+                return newValue(preValue)
+            })
+        }else{
+            setState(preValue => {
+                saveLocData(key, newValue)
+                return newValue
+            })
+        }
+        
     }
 
     return [state, SetLocState];

@@ -33,10 +33,18 @@ var useLocState = function (key, value) {
         }
     }, []);
     var SetLocState = function (newValue) {
-        setState(function (preValue) {
-            saveLocData(key, newValue);
-            return newValue;
-        });
+        if (typeof newValue === "function") {
+            setState(function (preValue) {
+                saveLocData(key, newValue);
+                return newValue(preValue);
+            });
+        }
+        else {
+            setState(function (preValue) {
+                saveLocData(key, newValue);
+                return newValue;
+            });
+        }
     };
     return [state, SetLocState];
 };
