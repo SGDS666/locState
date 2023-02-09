@@ -109,5 +109,6 @@ const CountHistory = () => {
 #### 因为加减操作是父组件进行的 所以每次更新状态都会导致自组件读取本地数据 从而更新页面
 #### 所以如果父祖件没有进行更新 uselocValue(key:string) 只会运行一次 所以不要想用本库当全局状态管理 他本身只是一个持久化状态的 useState
 
+#### 另外通过useLocState解构的setState在useLocState1.0.4版本之后才能像useState中的setState一样传入函数
 
 

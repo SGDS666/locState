@@ -9,6 +9,7 @@
     "typeRoots": [
       "node_modules/@types",
     ],
+    "removeComments": true,
     "declaration": true, //打包之后是否生成声明文件
     "outDir": "./dist", //输出文件
     

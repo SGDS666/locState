@@ -26,7 +26,7 @@ const saveLocData = <T>(key: string, newValue: T) => {
 
 }
 
-export const useLocState = <T>(key: string, value: T): [T, (newValue: T) => void] => {
+export const useLocState = <T>(key: string, value: T): [T, (newValue:T|((preValue:T)=>T)) => void] => {
 
     const [state, setState] = useState(value);
 
@@ -46,10 +46,11 @@ export const useLocState = <T>(key: string, value: T): [T, (newValue: T) => void
         }
     }, [])
 
-    const SetLocState = (newValue:any) => {
+    const SetLocState = (newValue:T|((preValue:T)=>T)) => {
         if(typeof newValue === "function"){
             setState(preValue => {
                 saveLocData(key, newValue)
+                //@ts-ignore
                 return newValue(preValue)
             })
         }else{
