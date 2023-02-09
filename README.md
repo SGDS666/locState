@@ -102,20 +102,12 @@ const CountHistory = () => {
 ```
 <img width="1468" alt="image" src="https://user-images.githubusercontent.com/86196091/217637630-bb1d37a8-9301-47e4-9f80-2fb353d8c328.png">
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 ![Kapture 2023-02-09 at 04 03 08](https://user-images.githubusercontent.com/86196091/217639050-c34ade6d-6d05-4eb4-8f51-3f207b26fa02.gif)
 
 
 #### 因为加减操作是父组件进行的 所以每次更新状态都会导致自组件读取本地数据 从而更新页面
 #### 所以如果父祖件没有进行更新 uselocValue(key:string) 只会运行一次 所以不要想用本库当全局状态管理 他本身只是一个持久化状态的 useState
 
-<<<<<<< HEAD
 #### 另外通过useLocState解构的setState在useLocState1.0.4版本之后才能像useState中的setState一样传入函数
-=======
-
->>>>>>> origin/master
 
 
