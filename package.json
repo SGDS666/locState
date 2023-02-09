@@ -1,14 +1,14 @@
 {
   "name": "uselocstate",
-  "version": "1.0.4",
-  "homepage":"https://github.com/SGDS666/locState",
+  "version": "1.0.5",
+  "homepage": "https://github.com/SGDS666/locState",
   "description": "",
   "main": "./dist/useLocState.js",
   "types": "./dist/useLocState.d.ts",
   "scripts": {
-    "push3":"npm version patch",
-    "push2":"npm version minor",
-    "push1":"npm version major"
+    "push3": "npm version patch",
+    "push2": "npm version minor",
+    "push1": "npm version major"
   },
   "keywords": [
     "TypeScript",
