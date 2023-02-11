@@ -110,4 +110,12 @@ const CountHistory = () => {
 
 #### 另外通过useLocState解构的setState在useLocState1.0.4版本之后才能像useState中的setState一样传入函数
 
+#### 还暴露了一个本地数据的接口clearLocValue  仅仅只是调用了一localStorage.removeItem("locState") 不会清除其他参数放心使用
+#### 需要注意的是删除本地数据 状态不会发生改变 需要手动更改状态 逻辑如下 
+#### 
+#### uselocState(key,value) => const value =  localStorage.getItem(key) ?? value 
+#### [state,useState] = useState(value)
+#### setLocState(newState) => localStorage.set(...) => setState(newState)
+#### clearLocValue => localStorage.removeItem("locState")   未涉及状态
+
 
