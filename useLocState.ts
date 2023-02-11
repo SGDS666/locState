@@ -49,7 +49,8 @@ export const useLocState = <T>(key: string, value: T): [T, (newValue:T|((preValu
     const SetLocState = (newValue:T|((preValue:T)=>T)) => {
         if(typeof newValue === "function"){
             setState(preValue => {
-                saveLocData(key, newValue)
+                 //@ts-ignore
+                saveLocData(key, newValue(preValue))
                 //@ts-ignore
                 return newValue(preValue)
             })
@@ -94,4 +95,7 @@ export const useLocValue = (key: string) => {
 }
 
 
+export const clearLocValue= () => {
+    localStorage.removeItem("locState")
+}
 

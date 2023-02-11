@@ -1,6 +1,6 @@
 {
   "name": "uselocstate",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "homepage": "https://github.com/SGDS666/locState",
   "description": "",
   "main": "./dist/useLocState.js",
@@ -8,7 +8,8 @@
   "scripts": {
     "push3": "npm version patch",
     "push2": "npm version minor",
-    "push1": "npm version major"
+    "push1": "npm version major",
+    "build": "yarn tsc -p ./tsconfig.json"
   },
   "keywords": [
     "TypeScript",
@@ -19,9 +20,6 @@
   ],
   "author": "sgds",
   "license": "ISC",
-  "dependencies": {
-    "typescript": "^4.9.5"
-  },
   "files": [
     "dist/"
   ]
