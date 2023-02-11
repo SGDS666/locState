@@ -112,10 +112,10 @@ const CountHistory = () => {
 
 #### 还暴露了一个本地数据的接口clearLocValue  仅仅只是调用了一localStorage.removeItem("locState") 不会清除其他参数放心使用
 #### 需要注意的是删除本地数据 状态不会发生改变 需要手动更改状态 逻辑如下 
-#### 
-#### uselocState(key,value) => const value =  localStorage.getItem(key) ?? value 
-#### [state,useState] = useState(value)
-#### setLocState(newState) => localStorage.set(...) => setState(newState)
+#### uselocState(key,value) => const value =  localStorage.getItem(key) ?? value  => 副本更新参数(key:value) => localStorage.setitem('locstate',副本) 
+#### 调用后先查找本地存储 没有则使用初始值并存储本地
+#### [state,setState] = useState(value) //调用React 原生hook
+#### setLocState(newState) => 副本更新参数(key,newState) => localStorage.set('locstate',副本) => setState(newState) 设置state时 副本先更新数据 然后存储本地 最后设置状态
 #### clearLocValue => localStorage.removeItem("locState")   未涉及状态
 
 
