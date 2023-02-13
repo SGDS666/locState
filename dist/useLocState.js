@@ -35,8 +35,9 @@ var useLocState = function (key, value) {
     var SetLocState = function (newValue) {
         if (typeof newValue === "function") {
             setState(function (preValue) {
-                saveLocData(key, newValue(preValue));
-                return newValue(preValue);
+                var value = newValue(preValue);
+                saveLocData(key, value);
+                return value;
             });
         }
         else {

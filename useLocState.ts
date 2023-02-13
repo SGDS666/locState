@@ -49,10 +49,10 @@ export const useLocState = <T>(key: string, value: T): [T, (newValue:T|((preValu
     const SetLocState = (newValue:T|((preValue:T)=>T)) => {
         if(typeof newValue === "function"){
             setState(preValue => {
-                 //@ts-ignore
-                saveLocData(key, newValue(preValue))
                 //@ts-ignore
-                return newValue(preValue)
+                const value = newValue(preValue)
+                saveLocData(key, value)
+                return value
             })
         }else{
             setState(preValue => {
